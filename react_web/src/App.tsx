@@ -1,20 +1,29 @@
 import React from 'react';
-import {BrowserRouter,Route,Routes} from 'react-router-dom';
-import Login from './component/user/login';
-import Register from './component/user/register';
-import Home from './component/index';
+import {BrowserRouter,Routes,Route} from 'react-router-dom';
+import { Router } from './router';
+import AdminHome from './pages/admin';
+import UserInfo from "./pages/user/userInfo"
+import Home from './pages/home';
+import Login from './pages/user/login';
+import Register from './pages/user/register';
 
-class App extends React.Component{
-	render(){
+class App extends React.Component {
+	render(): React.ReactNode {
 		return (
 			<BrowserRouter>
-				<Routes>
-					<Route path='/' element={<Home />}/>
-					<Route path='/user'>
+				<Router />
+				{/* <Routes>
+					 <Route path='/' element={<Home />}/>
+					<Route path='/home' element={<Home />}/>
+					<Route path='/user' >
 						<Route path='login' element={<Login />}></Route>
 						<Route path='register' element={<Register />}></Route>
 					</Route>
-				</Routes>
+					<Route path='/admin' element={<AdminHome />}>
+
+					</Route> 
+
+				</Routes> */}
 			</BrowserRouter>
 		);
 	}
